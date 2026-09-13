@@ -1,4 +1,6 @@
-# Commercial AI SaaS — QA Portfolio Project
+# Commercial AI SaaS — QA Case Study
+
+> Sanitized artifacts from a real paid QA engagement for an AI SaaS web platform.
 
 <div align="center">
 
@@ -10,11 +12,15 @@
 
 </div>
 
-This repository presents sanitized artifacts from a real paid commercial QA engagement for an AI SaaS web platform.
+| Scope | Evidence | Status |
+|---|---|---|
+| Functional · E2E · regression · responsive · integrations | UI/runtime observations · Network · Console where relevant · retest records | Sanitized commercial QA case; source cycle was still in progress |
+
+**Start here:** [QA scope](docs/qa-scope.md) · [E2E scenarios](docs/e2e-scenarios.md) · [responsive / cross-browser](docs/responsive-cross-browser.md) · [sanitization rules](SANITIZATION.md)
 
 ## My role
 
-QA Engineer
+**QA Engineer**
 
 ## What I tested
 
@@ -62,7 +68,7 @@ The source snapshot was an interim QA cycle, not a release sign-off: the final r
 
 ## Tools and techniques
 
-Chrome DevTools, Network inspection, Console inspection when relevant, responsive/device emulation, Firefox, real iPhone Safari, Google Sheets QA documentation, HTTP/OpenAPI-style fixtures, and manual E2E/regression testing. Git/GitHub is used here only to publish a sanitized portfolio artifact.
+Chrome DevTools, Network inspection, Console inspection when relevant, responsive/device emulation, Firefox, real iPhone Safari, Google Sheets QA documentation, HTTP/OpenAPI-style fixtures, and manual E2E/regression testing. Git/GitHub is used here only to publish a sanitized QA artifact.
 
 ## Repository structure
 
