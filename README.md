@@ -1,5 +1,15 @@
 # Commercial AI SaaS — QA Portfolio Project
 
+<div align="center">
+
+[![Manual QA](https://img.shields.io/badge/Manual_QA-Regression_%26_E2E-4B5563?style=for-the-badge)](docs/qa-scope.md)
+[![Chrome](https://img.shields.io/badge/Chrome-DevTools-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](docs/responsive-cross-browser.md)
+[![Firefox](https://img.shields.io/badge/Firefox-Cross_Browser-FF7139?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](docs/responsive-cross-browser.md)
+[![iOS](https://img.shields.io/badge/iPhone-Safari-000000?style=for-the-badge&logo=apple&logoColor=white)](docs/responsive-cross-browser.md)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-Integration_Fixtures-6BA539?style=for-the-badge&logo=openapiinitiative&logoColor=white)](docs/e2e-scenarios.md)
+
+</div>
+
 This repository presents sanitized artifacts from a real paid commercial QA engagement for an AI SaaS web platform.
 
 ## My role
@@ -67,4 +77,3 @@ evidence/      evidence policy; no production screenshots
 ## Confidentiality and sanitization
 
 This repository contains no client name, product URL, customer data, production screenshots, Drive/Sheets links, internal IDs, credentials, or raw request identifiers. See [SANITIZATION.md](SANITIZATION.md) for the review rules applied before publication.
-
