@@ -1,0 +1,28 @@
+# Local secrets and runtime files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.crt
+*.har
+*.log
+
+# Local/browser evidence is never committed
+evidence/raw/
+evidence/screenshots/
+evidence/videos/
+evidence/downloads/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.mp4
+*.mov
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db
+
