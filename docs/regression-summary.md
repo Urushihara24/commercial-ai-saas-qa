@@ -28,7 +28,7 @@ Upstream FAIL не превращался автоматически в downstre
 | Generator analysis/export | основной путь доведён до preview и безопасного export |
 | Saved-answer/reload persistence | сохранённые значения восстанавливаются в проверенных сценариях |
 | Integration auth semantics | no-auth flow больше не требует отсутствующий credential input |
-| Agent integration binding | binding сохраняется после save, выходa, reload и reopen |
+| Agent integration binding | binding сохраняется после save, выхода, reload и reopen |
 | Notification archive | новое событие не удаляет ранее сохранённую запись |
 | Error mapping | постоянная внешняя причина отображается как постоянная, не как временный retry |
 | Responsive controls | status и close controls разделены на проверенных ширинах |
@@ -36,4 +36,3 @@ Upstream FAIL не превращался автоматически в downstre
 ## Ограничение итогового статуса
 
 Исходный QA snapshot оставался промежуточным. Финальный regression gate был NOT RUN, а часть полных E2E-flow после отдельных fixes требовала самостоятельного повторного запуска. Поэтому этот документ описывает выполненную QA-работу и targeted evidence, но не объявляет продукт полностью готовым к релизу.
-
