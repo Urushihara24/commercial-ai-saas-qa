@@ -1,38 +1,37 @@
-# Обзор QA-проекта
+# QA Project Overview
 
-## Контекст
+## Context
 
-Это обезличенный набор рабочих материалов из реального оплачиваемого QA-вовлечения для AI SaaS web-платформы. Платформа объединяла каталог готовых AI-специалистов, диалоги, конструктор собственных агентов, пошаговый генератор кампаний и пользовательские интеграции.
+This repository contains sanitized working materials from a real paid QA engagement for an AI SaaS web platform. The product combined a catalog of ready-made AI specialists, conversational workflows, a custom-agent builder, a multi-step campaign generator, and user-defined integrations.
 
-Названия клиента, продукта, домены, внутренние маршруты и production-идентификаторы удалены. Описание сохраняет только те аспекты, которые нужны для демонстрации инженерной QA-работы.
+Client and product names, domains, internal routes, and production identifiers have been removed. The description keeps only the details needed to demonstrate practical QA engineering work.
 
-## Роль
+## Role
 
 QA Engineer.
 
-Зона ответственности включала подготовку и выполнение ручных проверок, фиксацию Expected/Actual, оценку severity/priority, сбор evidence, проверку зависимостей, ретест исправлений и affected regression.
+Responsibilities included preparing and executing manual checks, recording Expected vs Actual, assigning severity and priority, collecting evidence, validating dependencies, retesting fixes, and running affected regression.
 
-## Модель покрытия
+## Coverage model
 
-Работа велась от риска и пользовательского потока:
+Testing was organized around risk and user flows:
 
-1. публичная часть и authentication;
-2. критичный AI dialog/runtime;
-3. сохранение состояния и повторное открытие;
-4. собственные агенты и integrations;
-5. generator и безопасный путь до preview/export;
-6. responsive/cross-browser/real-device проверки;
+1. public area and authentication;
+2. critical AI dialog/runtime behavior;
+3. state persistence and reopen behavior;
+4. custom agents and integrations;
+5. campaign generator through safe preview/export;
+6. responsive, cross-browser, and real-device checks;
 7. read-only administrative visibility.
 
-Проверки связывались с E2E-сценариями, exploratory-наблюдениями, дефектами и retest-пачками. Downstream-проверка не объявлялась FAIL только потому, что upstream prerequisite был недоступен: в таких случаях фиксировался BLOCKED BY BUG.
+Checks were linked to E2E scenarios, exploratory observations, defects, and fix-retest batches. A downstream check was not marked FAIL simply because an upstream prerequisite was unavailable; in those cases the dependency was recorded as BLOCKED BY BUG.
 
-## Evidence-first подход
+## Evidence-first approach
 
-Для FAIL использовалось актуальное доказательство текущего прогона: screenshot, видео, UI/runtime observation, network status или console message — в зависимости от природы дефекта. Отдельно отмечалось, когда evidence было supporting, а не прямым доказательством причинной последовательности.
+Every FAIL required current-run evidence appropriate to the defect: screenshot, continuous video, UI/runtime observation, network status, or console output. Supporting evidence was explicitly distinguished from direct causal evidence when necessary.
 
-В этот репозиторий evidence не перенесено. Публичные документы описывают способ проверки и тип подтверждения, а не содержат production-артефакты.
+Production evidence is not copied into this repository. The public-facing documentation describes the validation method and evidence type without exposing client artifacts.
 
-## Итоговое ограничение
+## Final status limitation
 
-Исходный snapshot был рабочим промежуточным QA-циклом. На момент snapshot финальный regression gate оставался NOT RUN, поэтому материалы не являются заявлением о полном release approval.
-
+The source snapshot represents an interim QA cycle. At that point the final regression gate had not yet been executed, so these materials must not be interpreted as blanket release approval.

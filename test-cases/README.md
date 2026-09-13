@@ -1,6 +1,5 @@
-# Representative test cases
+# Representative Test Cases
 
-В каталоге приведены representative checks, переписанные для публичного портфолио. Это не экспорт исходной QA-таблицы и не полный test suite.
+This directory contains representative checks rewritten for a public portfolio. It is not an export of the original QA tracker and is not the complete test suite.
 
-Идентификаторы `TC-SAN-*` синтетические. Они нужны для демонстрации структуры проверки, а не для восстановления traceability клиента.
-
+The `TC-SAN-*` identifiers are synthetic. They demonstrate test structure without exposing client traceability.

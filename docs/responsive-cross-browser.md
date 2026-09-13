@@ -1,29 +1,28 @@
-# Responsive и cross-browser coverage
+# Responsive and Cross-Browser Coverage
 
-## Матрица окружений
+## Environment matrix
 
-| Environment | Проверки | Наблюдение |
+| Environment | Coverage | Observation |
 | --- | --- | --- |
-| Chrome desktop, 1920×1080 | functional baseline, dialog, generator, admin read-only | основной desktop-контур |
-| Chrome desktop, 1440 px | responsive desktop, modal/header, integrations | проверка layout и hit areas |
-| Chrome Device Mode, 768 px | tablet layout, dialog, generator, forms | проверка переноса и доступности controls |
-| Chrome Device Mode, 390 px | mobile menu, dialog, generator, FAQ, overlays | проверка clipping/overflow и usable workflow |
-| Firefox desktop | smoke и рисковые flows | отдельного browser-specific дефекта в подтверждённом прогоне не выявлено |
-| Реальный iPhone Safari | native mobile menu, dialog, generator, FAQ | initial runtime failure был зарегистрирован; blanket post-fix PASS полного E2E не заявляется без отдельного полного real-device rerun |
+| Chrome desktop, 1920×1080 | functional baseline, dialog, generator, admin read-only | primary desktop baseline |
+| Chrome desktop, 1440 px | responsive desktop, modal/header, integrations | layout and hit-area validation |
+| Chrome Device Mode, 768 px | tablet layout, dialog, generator, forms | wrapping and control accessibility |
+| Chrome Device Mode, 390 px | mobile menu, dialog, generator, FAQ, overlays | clipping/overflow and workflow usability |
+| Firefox desktop | smoke and risk-based flows | no Firefox-specific defect reproduced in the verified run |
+| Real iPhone Safari | native mobile menu, dialog, generator, FAQ | an initial runtime failure was registered; a blanket PASS for the complete post-fix real-device E2E is not claimed without a dedicated full rerun |
 
 ## Responsive checklist
 
-- нет горизонтального scroll;
-- header/status/close controls не перекрываются;
-- текст переносится и остаётся читаемым;
-- input, buttons и hit areas доступны;
-- menu/overlay/modal корректно открываются и закрываются;
-- generator шаг можно завершить;
-- длинный AI response не ломает layout;
-- loading/error/empty states остаются понятными;
-- reload не создаёт дубликаты и не теряет пользовательское состояние.
+- no horizontal scroll;
+- header/status/close controls do not overlap;
+- text wraps and remains readable;
+- inputs, buttons, and hit areas remain accessible;
+- menus, overlays, and modals open and close correctly;
+- generator steps remain completable;
+- long AI responses do not break the layout;
+- loading, error, and empty states remain understandable;
+- reload does not create duplicates or lose user state.
 
 ## Evidence
 
-Для viewport-dependent проблем фиксировались точная ширина, состояние до/после и измерения rect/overlap, когда это помогало доказать проблему. Реальные screenshots в portfolio не копировались.
-
+For viewport-dependent issues, the exact width, before/after state, and rect/overlap measurements were recorded when they helped prove the defect. Production screenshots are intentionally not copied into the portfolio repository.

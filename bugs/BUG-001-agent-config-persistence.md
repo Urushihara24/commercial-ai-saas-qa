@@ -2,7 +2,7 @@
 
 - **Severity:** Major
 - **Priority:** P1
-- **Environment:** Production-safe QA run; Chrome desktop; responsive viewport around 768 px; authenticated QA user.
+- **Environment:** Production-safe QA run; Chrome desktop; authenticated QA user.
 - **Preconditions:** A custom AI agent exists and can be edited; a QA-visible configuration value can be changed without external side effects.
 
 ## Steps to Reproduce
@@ -33,4 +33,3 @@ Capture a causal before/save/reload/new-conversation sequence with the changed v
 ## What this defect demonstrates
 
 State persistence, configuration-to-runtime traceability, causal retesting, and disciplined separation of a targeted fix verification from a full regression claim.
-

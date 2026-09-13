@@ -1,50 +1,49 @@
-# QA scope
+# QA Scope
 
-## Входит в scope
+## In scope
 
-| Область | Что проверялось |
+| Area | Coverage |
 | --- | --- |
-| Public/auth | доступ гостя, регистрация/вход, protected area, logout |
-| AI dialog | отправка сообщений, terminal response, история, reopen, runtime states |
-| Custom agents | создание, редактирование, сохранение, binding integration, disable lifecycle |
-| Generator | шаги кампании, edit/reload persistence, preview, безопасный export |
-| Integrations | спецификация, подключение, auth semantics, сохранение состояния |
-| Admin read-only | загрузка списков, открытие существующих объектов, просмотр журнала, export |
-| Responsive | 390, 768, 1440 и 1920 px; overflow, clipping, controls, dialogs |
-| Browsers/devices | Chrome, Firefox, Chrome Device Mode, реальный iPhone Safari |
+| Public/auth | guest access, registration/login, protected areas, logout |
+| AI dialog | message submission, terminal response, history, reopen, runtime states |
+| Custom agents | creation, editing, persistence, integration binding, disabled-state lifecycle |
+| Generator | campaign steps, edit/reload persistence, preview, safe export |
+| Integrations | specification handling, connection flow, auth semantics, state persistence |
+| Admin read-only | list loading, opening existing objects, log visibility, export |
+| Responsive | 390, 768, 1440, and 1920 px; overflow, clipping, controls, dialogs |
+| Browsers/devices | Chrome, Firefox, Chrome Device Mode, real iPhone Safari |
 | Defect flow | Expected/Actual, severity, priority, evidence, retest, affected regression |
 
-## Окружения
+## Environments
 
-- Desktop Chrome: 1920×1080 и responsive width 1440 px.
-- Desktop Firefox: cross-browser smoke и рисковые пользовательские сценарии.
-- Chrome Device Mode: 390 px и 768 px.
-- Реальный iPhone Safari: native portrait mobile smoke и critical workflow checks.
+- Desktop Chrome: 1920×1080 and 1440 px responsive width.
+- Desktop Firefox: cross-browser smoke and risk-based user flows.
+- Chrome Device Mode: 390 px and 768 px.
+- Real iPhone Safari: native portrait mobile smoke and critical workflow checks.
 
-Точные версии ОС/браузеров и client-specific test data намеренно не публикуются.
+Exact OS/browser versions and client-specific test data are intentionally omitted.
 
-## Не входит в scope
+## Out of scope
 
-- security-аудит;
+- security audit;
 - load/performance testing;
-- самостоятельное тестирование внешних сервисов;
-- реальное выполнение платежей и операции payment gateway;
+- independent testing of third-party services;
+- real payment execution or payment-gateway operations;
 - destructive third-party OAuth/export/bid/campaign actions;
-- state-changing admin CRUD, role mutation и глобальные billing/pricing изменения;
-- отдельное desktop Safari testing;
-- автоматизация, если она не подтверждена исходным QA-процессом.
+- state-changing admin CRUD, role mutation, and global billing/pricing changes;
+- dedicated desktop Safari testing;
+- test automation not evidenced by the source QA engagement.
 
-Внешняя недоступность сервиса не считалась автоматически багом продукта. Проверялась только корректность взаимодействия SaaS-платформы с таким состоянием и понятность сообщения пользователю.
+An external service outage was not automatically classified as a product defect. The QA scope covered the SaaS product's handling of that state and the clarity of the user-facing message.
 
-## Статусная модель
+## Status model
 
-- **PASS** — Expected подтверждён.
-- **FAIL** — Expected нарушен; есть актуальное evidence и связанный BUG.
-- **BLOCKED** — сценарий нельзя завершить из-за подтверждённого blocker или отсутствующей обязательной зависимости.
-- **SKIPPED** — осознанно исключён из scope с явной причиной.
-- **NOT RUN** — проверка ещё не выполнена и не имеет подтверждённого blocker.
+- **PASS** — Expected was directly confirmed.
+- **FAIL** — Expected was violated; current evidence and a linked defect exist.
+- **BLOCKED** — the scenario cannot be completed because of a confirmed blocker or missing mandatory dependency.
+- **SKIPPED** — deliberately excluded from scope with an explicit reason.
+- **NOT RUN** — not yet executed and not blocked by a confirmed dependency.
 
 ## Production safety
 
-Использовались QA-owned данные и обратимые проверки. Расходные AI-проверки выполнялись только в разрешённом безопасном контуре. Реальные платежи, чужие production-данные и необратимые внешние действия не выполнялись.
-
+Testing used QA-owned data and reversible actions. Paid/consumptive AI checks were performed only within the allowed safe QA scope. Real payments, third-party production data, and irreversible external actions were not executed.

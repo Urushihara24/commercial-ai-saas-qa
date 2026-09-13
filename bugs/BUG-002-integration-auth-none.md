@@ -2,19 +2,19 @@
 
 - **Severity:** Major
 - **Priority:** P1
-- **Environment:** Production-safe QA run; Chrome desktop; current supported viewport.
+- **Environment:** Production-safe QA run; Chrome desktop; supported desktop viewport.
 - **Preconditions:** A safe HTTP-style integration specification declares that no authentication is required.
 
 ## Steps to Reproduce
 
 1. Open the custom integration form.
 2. Select the no-authentication mode.
-3. Provide the safe specification using a synthetic endpoint such as `POST /api/integrations/{integration_id}/connect`.
+3. Provide a safe OpenAPI-style specification with `auth:none` and a synthetic read-only endpoint.
 4. Start the connection flow.
 
 ## Expected Result
 
-The platform submits the no-authentication integration without requesting a credential that the specification does not define.
+The platform submits the no-authentication integration without requesting credentials that the specification does not define.
 
 ## Actual Result
 
@@ -31,4 +31,3 @@ Record the selected auth mode, the visible validation message, and safe HTTP sta
 ## What this defect demonstrates
 
 Contract-oriented integration testing, safe API observation, negative-path validation, and separation of auth semantics from binding persistence.
-

@@ -1,42 +1,41 @@
-# Retest workflow
+# Retest Workflow
 
-## Цикл
+## Flow
 
 ```text
 fix batch
    ↓
 reproduce original defect
    ↓
-verify original Expected
+verify original Expected Result
    ↓
 affected regression / risk-based smoke
    ↓
 record evidence and status
 ```
 
-## Что фиксируется
+## What is recorded
 
-- исходный BUG и его severity/priority;
-- build/fix batch и environment;
-- точные шаги воспроизведения;
+- original defect and its severity/priority;
+- fix batch/build and environment;
+- exact reproduction steps;
 - Expected vs Actual;
-- direct или supporting evidence;
-- статус исходного дефекта;
-- downstream TC/E2E, которые стали доступны или остались BLOCKED;
-- ограничения evidence и незавершённые проверки.
+- direct or supporting evidence;
+- status of the original defect;
+- downstream test cases/E2E scenarios that became available or remained BLOCKED;
+- evidence limitations and unfinished checks.
 
-## Выбранные retest outcomes
+## Selected retest outcomes
 
-| Public defect | Retest outcome | Что было подтверждено |
+| Public defect | Retest outcome | Verification |
 | --- | --- | --- |
-| BUG-001 | PASS | saved agent configuration применена в новом dialog после reload |
-| BUG-002 | PASS | `auth:none` flow завершён без несуществующего credential input |
-| BUG-003 | PASS | duplicate prompt не воспроизведён после последовательных reload |
-| BUG-004 | PASS | новая notification не заменила предыдущую history item |
-| BUG-005 | PASS | постоянная external error получила корректное SaaS-side сообщение |
-| BUG-006 | PASS | status и close controls имеют раздельные hit areas на проверенных viewport |
+| BUG-001 | PASS | saved agent configuration applied in a new dialog after reload |
+| BUG-002 | PASS | `auth:none` flow completed without nonexistent credential input |
+| BUG-003 | PASS | duplicate prompt did not reproduce after consecutive reloads |
+| BUG-004 | PASS | a new notification did not replace the previous history item |
+| BUG-005 | PASS | permanent external error received the correct SaaS-side message |
+| BUG-006 | PASS | status and close controls had separate hit areas at the checked viewports |
 
 ## Evidence discipline
 
-PASS присваивается только при подтверждении Expected. Historical screenshot не переиспользуется как новый retest evidence. Если прямой causal artifact отсутствует, это явно отмечается и не маскируется как более сильное доказательство.
-
+PASS is assigned only when the Expected Result is confirmed. Historical screenshots are not reused as new retest evidence. If a direct causal artifact is unavailable, that limitation is stated explicitly rather than presenting supporting evidence as stronger proof.

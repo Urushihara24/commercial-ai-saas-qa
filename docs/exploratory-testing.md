@@ -1,34 +1,33 @@
-# Exploratory testing
+# Exploratory Testing
 
-Exploratory testing применялось как time-boxed проверка рисков, которые нельзя было полностью выразить одним happy-path TC.
+Exploratory testing was used as a time-boxed way to investigate risks that could not be fully expressed through a single happy-path test case.
 
 ## Charters
 
-### 1. AI runtime и terminal states
+### 1. AI runtime and terminal states
 
-Проверялись длительное ожидание, отсутствие ответа, повторная отправка, сохранение результата и поведение после reopen. Это привело к выделению runtime defect как отдельного Critical/P0 риска, а не к смешению его с UI layout.
+Checks covered prolonged waiting, missing responses, repeated submission, result persistence, and reopen behavior. This helped isolate a runtime defect as a separate Critical/P0 risk instead of mixing it with UI layout concerns.
 
-### 2. Persistence и reload
+### 2. Persistence and reload
 
-Проверялись сохранённые ответы generator-а, введённые значения текущего шага, duplicate prompt после reload и применение custom-agent settings в новом dialog. Соседние проявления фиксировались раздельно, если у них различались Expected или causal sequence.
+Checks covered stored generator answers, values entered on the active step, duplicate prompts after reload, and whether custom-agent settings were applied in a new dialog. Adjacent symptoms were documented separately when their Expected Results or causal sequences differed.
 
 ### 3. Custom integrations
 
-Проверялись auth semantics, валидность HTTP-style specification, connection flow, безопасное сохранение binding и повторное открытие агента. Auth-none и binding persistence оформлялись как разные defect classes.
+Checks covered authentication semantics, validity of HTTP-style specifications, connection flow, safe binding persistence, and reopening the linked agent. No-auth behavior and binding persistence were treated as separate defect classes.
 
 ### 4. Notification/event history
 
-Проверялась целостность архива после появления нового события: append/order/retention предыдущей записи. Для проверки не выполнялись реальные платежные действия.
+Checks focused on archive integrity after a new event appeared: append behavior, ordering, and retention of the previous record. No real payment action was executed.
 
 ### 5. Error communication
 
-Сопоставлялись внешний status/error code, реальная устойчивость причины и текст, который видит пользователь. Внешняя недоступность не объявлялась BUG без нарушения SaaS-side Expected.
+External status/error codes were compared with the actual permanence of the condition and the message presented to the user. An external limitation was not classified as a product BUG unless the SaaS-side Expected Result was violated.
 
 ### 6. Responsive interaction
 
-Проверялись не только загрузка страницы, но и hit areas, overlays, dialogs, footer/header, clipping, overlap, horizontal scroll и доступность generator controls на узких ширинах.
+Coverage went beyond page load and included hit areas, overlays, dialogs, footer/header behavior, clipping, overlap, horizontal scroll, and generator-control usability at narrow widths.
 
-## Результат exploratory-подхода
+## Outcome of exploratory work
 
-Исследовательские проверки расширили defect discovery за пределы обязательных TC: были обнаружены дополнительные проблемы в notification history, disabled-agent UX, integration form и error mapping. В публичный репозиторий вынесены только шесть representative classes.
-
+Exploratory checks extended defect discovery beyond mandatory test cases and surfaced additional issues in notification history, disabled-agent UX, integration-form behavior, and error mapping. Only six representative defect classes are included in this portfolio repository.

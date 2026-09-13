@@ -1,106 +1,105 @@
-# Sample test cases
+# Sample Test Cases
 
-## TC-SAN-001 — authentication и logout
+## TC-SAN-001 — Authentication and logout
 
 - **Area:** Authentication
 - **Priority:** P0
-- **Preconditions:** Пользователь зарегистрирован; активной сессии нет.
-- **Steps:** Открыть страницу входа; выполнить вход валидными QA-данными; открыть protected area; выполнить logout.
-- **Expected Result:** После входа открывается protected area; после logout защищённый маршрут снова требует авторизацию; сессия не восстанавливается самопроизвольно.
+- **Preconditions:** Registered user; no active session.
+- **Steps:** Open the login page; sign in with valid QA credentials; open a protected area; log out.
+- **Expected Result:** The protected area becomes available after login; after logout the protected route requires authentication again; the session is not restored unexpectedly.
 
-## TC-SAN-002 — ответ AI в диалоге
+## TC-SAN-002 — AI response in dialog
 
 - **Area:** AI dialog/runtime
 - **Priority:** P0
-- **Preconditions:** Доступен разрешённый QA-пользователь с положительным внутренним балансом; выбран готовый AI-специалист.
-- **Steps:** Открыть диалог; отправить короткое текстовое сообщение; дождаться terminal state; проверить содержимое ответа и состояние composer.
-- **Expected Result:** Сообщение отображается; AI возвращает содержательный terminal response; бесконечное состояние ожидания и ложный success отсутствуют.
+- **Preconditions:** Authorized QA user with a positive internal balance; a ready-made AI specialist is selected.
+- **Steps:** Open the dialog; send a short text message; wait for a terminal state; verify the response content and composer state.
+- **Expected Result:** The message is displayed; the AI returns a meaningful terminal response; no endless waiting state or false success is shown.
 
-## TC-SAN-003 — сохранение истории диалога
+## TC-SAN-003 — Dialog history persistence
 
 - **Area:** AI dialog / persistence
 - **Priority:** P1
-- **Preconditions:** В диалоге уже есть одно завершённое сообщение и ответ.
-- **Steps:** Отправить второе сообщение; вернуться к списку диалогов; снова открыть тот же диалог.
-- **Expected Result:** Оба сообщения и ответа сохранены в правильном порядке; повторное открытие не создаёт новый пустой диалог и не теряет историю.
+- **Preconditions:** The dialog already contains one completed user message and AI response.
+- **Steps:** Send a second message; return to the dialog list; reopen the same dialog.
+- **Expected Result:** Both messages and responses remain in the correct order; reopening does not create a new empty dialog or lose history.
 
-## TC-SAN-004 — сохранённая настройка собственного агента применяется в новом диалоге
+## TC-SAN-004 — Saved custom-agent configuration is applied in a new dialog
 
 - **Area:** Custom AI agent
 - **Priority:** P1
-- **Preconditions:** Авторизованный QA-пользователь; собственный агент доступен для редактирования.
-- **Steps:** Изменить одну заметную настройку агента; сохранить; выйти из редактора; выполнить reload; открыть новый диалог с тем же агентом.
-- **Expected Result:** После reload настройка сохранена и применяется в новом диалоге; значение не откатывается к предыдущему состоянию.
+- **Preconditions:** Authenticated QA user; custom agent is editable.
+- **Steps:** Change one observable agent setting; save; leave the editor; reload; start a new dialog with the same agent.
+- **Expected Result:** The setting persists after reload and affects the new dialog; the value does not revert to the previous state.
 
-## TC-SAN-005 — integration с `auth:none`
+## TC-SAN-005 — Integration with `auth:none`
 
 - **Area:** Custom integration
 - **Priority:** P1
-- **Preconditions:** Подготовлена безопасная HTTP-style specification, не требующая credential input.
-- **Steps:** Создать integration; выбрать режим без авторизации; заполнить specification; запустить подключение; проверить результат.
-- **Expected Result:** Подключение завершается без запроса отсутствующих credentials; ошибка показывается только при нарушении фактических требований specification.
+- **Preconditions:** A safe HTTP-style specification is prepared and does not require credentials.
+- **Steps:** Create an integration; select no-auth mode; provide the specification; start the connection flow; verify the result.
+- **Expected Result:** The integration connects without requesting credentials that are not defined by the specification; validation errors appear only when actual specification requirements are violated.
 
-## TC-SAN-006 — binding integration к собственному агенту
+## TC-SAN-006 — Bind integration to a custom agent
 
 - **Area:** Custom agent / integration
 - **Priority:** P1
-- **Preconditions:** Integration создана и доступна QA-пользователю; собственный агент открыт в редакторе.
-- **Steps:** Выбрать integration; сохранить настройки агента; выйти; выполнить reload; снова открыть агента.
-- **Expected Result:** Binding сохраняется и отображается при повторном открытии; подключённая integration доступна агенту в рамках разрешённого сценария.
+- **Preconditions:** Integration is created and available to the QA user; custom agent is open in the editor.
+- **Steps:** Select the integration; save agent settings; exit; reload; reopen the same agent.
+- **Expected Result:** The binding persists and is visible after reopen; the integration remains available to the agent within the permitted scenario.
 
-## TC-SAN-007 — edit предыдущего ответа генератора
+## TC-SAN-007 — Edit a previous generator answer
 
 - **Area:** Campaign generator
 - **Priority:** P1
-- **Preconditions:** В черновике генератора есть сохранённый ответ шага.
-- **Steps:** Нажать «Изменить» у предыдущего ответа; проверить поле редактирования; подтвердить исходное или новое значение; продолжить.
-- **Expected Result:** Поле содержит сохранённое значение; подтверждение изменяет только целевой шаг и не очищает уже сохранённые данные.
+- **Preconditions:** A generator draft contains a saved answer from an earlier step.
+- **Steps:** Select Edit for the previous answer; verify the edit field; confirm the original or a new value; continue.
+- **Expected Result:** The field contains the saved value; confirming the edit changes only the target step and does not clear already stored data.
 
-## TC-SAN-008 — persistence текущего шага после reload
+## TC-SAN-008 — Active-step persistence after reload
 
 - **Area:** Generator / reload persistence
 - **Priority:** P1
-- **Preconditions:** В текущем шаге введено уникальное QA-значение, но маршрут ещё не завершён.
-- **Steps:** Ввести значение; убедиться, что оно отображается; выполнить reload; снова открыть тот же draft/step.
-- **Expected Result:** Значение восстанавливается после reload; текущий вопрос не дублируется в истории; пользователь может продолжить flow.
+- **Preconditions:** A unique QA value has been entered on the active step and the flow is not yet complete.
+- **Steps:** Enter the value; confirm it is visible; reload; reopen the same draft/step.
+- **Expected Result:** The value is restored after reload; the active prompt is not duplicated in history; the user can continue the flow.
 
-## TC-SAN-009 — mobile menu на 390 px
+## TC-SAN-009 — Mobile menu at 390 px
 
 - **Area:** Responsive
 - **Priority:** P0
-- **Preconditions:** Viewport установлен ровно в 390 px; открыта публичная или protected page.
-- **Steps:** Открыть mobile menu; нажать на пункт; закрыть menu; проверить страницу после закрытия.
-- **Expected Result:** Menu и пункты доступны; overlay исчезает после закрытия; горизонтального scroll, clipping и зависшего overlay нет.
+- **Preconditions:** Viewport is set to exactly 390 px; a public or protected page is open.
+- **Steps:** Open the mobile menu; select an item; close the menu; verify the page after close.
+- **Expected Result:** Menu items are accessible; the overlay disappears after close; no horizontal scroll, clipping, or stuck overlay remains.
 
-## TC-SAN-010 — dialog layout на узком viewport
+## TC-SAN-010 — Dialog layout on a narrow viewport
 
 - **Area:** Responsive / AI dialog
 - **Priority:** P0
-- **Preconditions:** Viewport 390 px; выбранный AI-специалист доступен.
-- **Steps:** Открыть dialog; проверить panel, composer, кнопку отправки и history; отправить короткое сообщение.
-- **Expected Result:** Критичные controls не перекрыты и не обрезаны; ответ можно прочитать; клавиатура/viewport не блокируют основной workflow.
+- **Preconditions:** Viewport is 390 px; selected AI specialist is available.
+- **Steps:** Open the dialog; inspect the panel, composer, send button, and history; send a short message.
+- **Expected Result:** Critical controls are not overlapped or clipped; the response remains readable; keyboard/viewport behavior does not block the main workflow.
 
 ## TC-SAN-011 — Firefox cross-browser dialog smoke
 
 - **Area:** Cross-browser
 - **Priority:** P1
-- **Preconditions:** Desktop Firefox; разрешённые QA-данные; выбранный AI-специалист.
-- **Steps:** Открыть продукт; перейти в dialog; отправить сообщение; дождаться ответа; вернуться в список.
-- **Expected Result:** Основные элементы и runtime flow работают так же, как в поддерживаемом Chrome; browser-specific console/runtime failure отсутствует.
+- **Preconditions:** Desktop Firefox; authorized QA data; AI specialist selected.
+- **Steps:** Open the product; navigate to a dialog; send a message; wait for the response; return to the list.
+- **Expected Result:** Core UI and runtime flow behave consistently with the supported Chrome baseline; no Firefox-specific console/runtime failure blocks the scenario.
 
-## TC-SAN-012 — real iPhone Safari mobile smoke
+## TC-SAN-012 — Real iPhone Safari mobile smoke
 
 - **Area:** Real-device mobile
 - **Priority:** P0
-- **Preconditions:** Реальный iPhone; Safari в portrait; доступен разрешённый QA-сценарий.
-- **Steps:** Проверить menu; открыть dialog; выполнить сообщение; проверить generator step; раскрыть FAQ.
-- **Expected Result:** Touch controls доступны; viewport не обрезает критичные элементы; ключевой mobile workflow может быть завершён без iOS-specific blocker.
+- **Preconditions:** Real iPhone; Safari in portrait orientation; an authorized QA scenario is available.
+- **Steps:** Verify the menu; open a dialog; send a message; verify a generator step; expand FAQ.
+- **Expected Result:** Touch controls are usable; the viewport does not clip critical elements; the key mobile workflow can be completed without an iOS-specific blocker.
 
-## TC-SAN-013 — mapping постоянной внешней ошибки
+## TC-SAN-013 — Mapping a permanent external error
 
 - **Area:** Error handling / integration
 - **Priority:** P1
-- **Preconditions:** Тестовая среда возвращает известную постоянную ошибку доступности внешнего provider-а.
-- **Steps:** Запустить шаг, зависящий от provider-а; зафиксировать внешний status/error code; сравнить сообщение SaaS с типом причины.
-- **Expected Result:** Пользователь получает точное сообщение о постоянной причине и понятное дальнейшее действие; ошибка не маркируется как кратковременная, если retry не изменит результат.
-
+- **Preconditions:** A test condition returns a known permanent external access error.
+- **Steps:** Start the flow that depends on the external provider; record the safe external status/error code; compare the SaaS message with the actual error class.
+- **Expected Result:** The user receives an accurate message about the permanent cause and a meaningful next step; a retry-later message is not used when retrying cannot change the result.

@@ -1,6 +1,5 @@
-# Selected defect reports
+# Selected Defect Reports
 
-Эти шесть отчётов — компактная публичная выборка реальных классов дефектов из коммерческого QA-вовлечения. Все ID, формулировки, URLs и evidence names синтетические.
+These six reports are a compact public-facing sample of real defect classes from a paid commercial QA engagement. All IDs, wording, URLs, and evidence names are synthetic or generalized.
 
-Отчёты не включают production screenshots, client evidence, внутренние идентификаторы или секретные значения. Ретест описан только там, где он был фактически подтверждён в исходном QA-контексте.
-
+The reports do not include production screenshots, client evidence, internal identifiers, or secret values. Retest outcomes are included only where verification was actually confirmed in the source QA work.

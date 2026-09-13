@@ -1,38 +1,38 @@
-# Regression summary
+# Regression Summary
 
-## Сводка исходного QA-цикла
+## Source QA cycle summary
 
-- Выполнено 150+ ручных test cases.
-- Зафиксировано 20+ дефектов с последующим ретестом там, где это было возможно.
-- P0/P1-риск покрыт в authentication, AI runtime, custom agents, integrations, generator и responsive/mobile flows.
-- Выполнены targeted regression checks после fix batches.
-- Проверены Chrome, Firefox, mobile emulation и реальный iPhone Safari.
+- 150+ manual test cases executed.
+- 20+ defects documented, with retest where verification was possible.
+- P0/P1 risk coverage across authentication, AI runtime, custom agents, integrations, generator, and responsive/mobile flows.
+- Targeted regression checks executed after fix batches.
+- Chrome, Firefox, mobile emulation, and a real iPhone Safari device were covered.
 
-Точные значения исходной таблицы намеренно не публикуются: они не нужны для демонстрации навыков и могут облегчить сопоставление с закрытым проектом.
+Exact values from the source QA tracker are intentionally not published because they are unnecessary for demonstrating the work and could make the client easier to identify.
 
-## Regression-модель
+## Regression model
 
-1. После исправления воспроизвести исходный дефект.
-2. Проверить Expected именно исходного TC.
-3. Выполнить affected regression по зависимым потокам.
-4. Выполнить smoke по риску: dialog, persistence, integration, generator или mobile layout.
-5. Зафиксировать evidence и статус отдельно для исходного BUG и downstream-проверок.
+1. Reproduce the original defect after the fix.
+2. Verify the original test case Expected Result.
+3. Execute affected regression across dependent flows.
+4. Run risk-based smoke for the relevant surface: dialog, persistence, integration, generator, or mobile layout.
+5. Record evidence and status separately for the original defect and downstream checks.
 
-Upstream FAIL не превращался автоматически в downstream FAIL. Если prerequisite был недостижим из-за подтверждённого дефекта, зависимый тест отмечался BLOCKED BY BUG.
+An upstream FAIL was not automatically converted into downstream FAIL results. If a prerequisite was unreachable because of a confirmed defect, the dependent check was marked BLOCKED BY BUG.
 
-## Что было проверено после fixes
+## Verified post-fix areas
 
-| Область | Результат targeted retest |
+| Area | Targeted retest result |
 | --- | --- |
-| AI dialog/runtime | terminal responses и сохранённая history подтверждены на primary surface |
-| Generator analysis/export | основной путь доведён до preview и безопасного export |
-| Saved-answer/reload persistence | сохранённые значения восстанавливаются в проверенных сценариях |
-| Integration auth semantics | no-auth flow больше не требует отсутствующий credential input |
-| Agent integration binding | binding сохраняется после save, выхода, reload и reopen |
-| Notification archive | новое событие не удаляет ранее сохранённую запись |
-| Error mapping | постоянная внешняя причина отображается как постоянная, не как временный retry |
-| Responsive controls | status и close controls разделены на проверенных ширинах |
+| AI dialog/runtime | terminal responses and saved history confirmed on the primary surface |
+| Generator analysis/export | core flow reached preview and safe export |
+| Saved-answer/reload persistence | stored values restored in the verified scenarios |
+| Integration auth semantics | no-auth flow no longer requested nonexistent credential input |
+| Agent integration binding | binding persisted through save, exit, reload, and reopen |
+| Notification archive | a new event no longer removed the previous stored entry |
+| Error mapping | a permanent external cause was presented as permanent rather than as a transient retry condition |
+| Responsive controls | status and close controls were separated at the checked widths |
 
-## Ограничение итогового статуса
+## Final status limitation
 
-Исходный QA snapshot оставался промежуточным. Финальный regression gate был NOT RUN, а часть полных E2E-flow после отдельных fixes требовала самостоятельного повторного запуска. Поэтому этот документ описывает выполненную QA-работу и targeted evidence, но не объявляет продукт полностью готовым к релизу.
+The source QA snapshot was still interim. The final regression gate had not yet been run, and several complete E2E flows still required an independent rerun after individual fixes. This document therefore describes completed QA work and targeted evidence without claiming full release approval.
