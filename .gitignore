@@ -7,6 +7,8 @@
 *.crt
 *.har
 *.log
+*.sqlite
+*.db
 
 # Local/browser evidence is never committed
 evidence/raw/
@@ -20,9 +22,17 @@ evidence/downloads/
 *.mp4
 *.mov
 
+# Client exports and local working artifacts
+*.csv
+*.xls
+*.xlsx
+*.pdf
+*.zip
+*.tar
+*.tar.gz
+
 # Editor and OS files
 .DS_Store
 .idea/
 .vscode/
 Thumbs.db
-
