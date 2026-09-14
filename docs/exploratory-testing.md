@@ -30,4 +30,4 @@ Coverage went beyond page load and included hit areas, overlays, dialogs, footer
 
 ## Outcome of exploratory work
 
-Exploratory checks extended defect discovery beyond mandatory test cases and surfaced additional issues in notification history, disabled-agent UX, integration-form behavior, and error mapping. Only six representative defect classes are included in this portfolio repository.
+Exploratory checks extended defect discovery beyond mandatory test cases and surfaced additional issues in notification history, disabled-agent UX, integration-form behavior, and error mapping. Only six representative defect classes are included in this public repository; the client's full exploratory record is not published.
