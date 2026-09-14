@@ -90,3 +90,5 @@ evidence/      evidence policy; no production screenshots or raw artifacts
 This repository contains no client or product name, production domain, customer data, production screenshots, Drive/Sheets links, internal IDs, credentials, cookies, authorization material, or raw request identifiers.
 
 The repository is a sanitized public-facing snapshot of the QA work, not an export of the client's internal tracker. See [SANITIZATION.md](SANITIZATION.md) for publication rules and the confidentiality review checklist.
+
+No open-source license is granted for reuse of the commercial QA documentation in this repository.
