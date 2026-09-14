@@ -60,7 +60,7 @@ These flows demonstrate how individual checks were connected into user journeys.
 
 **Expected:** Touch controls remain usable; no critical clipping, overlap, or horizontal scroll blocks the workflow; dialog and generator remain usable on mobile.
 
-**Observed in source work:** The initial real-device/runtime run exposed an AI-response defect. The defect was fixed and verified on primary and affected surfaces, but this portfolio does not claim a blanket post-fix PASS for the entire real-device E2E without a dedicated full rerun.
+**Observed in source work:** The initial real-device/runtime run exposed an AI-response defect. The defect was fixed and verified on primary and affected surfaces, but this public repository does not claim a blanket post-fix PASS for the entire real-device E2E without a dedicated full rerun.
 
 ## Exclusions
 
