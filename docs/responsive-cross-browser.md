@@ -25,4 +25,4 @@
 
 ## Evidence
 
-For viewport-dependent issues, the exact width, before/after state, and rect/overlap measurements were recorded when they helped prove the defect. Production screenshots are intentionally not copied into the portfolio repository.
+For viewport-dependent issues, the exact width, before/after state, and rect/overlap measurements were recorded when they helped prove the defect. Production screenshots are intentionally not copied into this public repository.
