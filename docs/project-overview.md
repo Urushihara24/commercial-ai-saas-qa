@@ -4,11 +4,11 @@
 
 This repository contains sanitized working materials from a real paid QA engagement for an AI SaaS web platform. The product combined a catalog of ready-made AI specialists, conversational workflows, a custom-agent builder, a multi-step campaign generator, and user-defined integrations.
 
-Client and product names, domains, internal routes, and production identifiers have been removed. The description keeps only the details needed to demonstrate practical QA engineering work.
+Client and product names, domains, internal routes, and production identifiers have been removed. The public version preserves the technical QA context without exposing client traceability or proprietary production data.
 
 ## Role
 
-QA Engineer.
+**QA Engineer**
 
 Responsibilities included preparing and executing manual checks, recording Expected vs Actual, assigning severity and priority, collecting evidence, validating dependencies, retesting fixes, and running affected regression.
 
@@ -30,7 +30,7 @@ Checks were linked to E2E scenarios, exploratory observations, defects, and fix-
 
 Every FAIL required current-run evidence appropriate to the defect: screenshot, continuous video, UI/runtime observation, network status, or console output. Supporting evidence was explicitly distinguished from direct causal evidence when necessary.
 
-Production evidence is not copied into this repository. The public-facing documentation describes the validation method and evidence type without exposing client artifacts.
+Production evidence is not copied into this repository. Public documentation describes the validation method and evidence type without exposing client artifacts.
 
 ## Final status limitation
 
