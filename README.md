@@ -1,4 +1,4 @@
-# Commercial AI SaaS — QA Case Study
+# Commercial AI SaaS — Commercial QA Project
 
 > Sanitized artifacts from a real paid QA engagement for an AI SaaS web platform.
 
@@ -14,7 +14,7 @@
 
 | Scope | Evidence | Status |
 |---|---|---|
-| Functional · E2E · regression · responsive · integrations | UI/runtime observations · Network · Console where relevant · retest records | Sanitized commercial QA case; source cycle was still in progress |
+| Functional · E2E · regression · responsive · integrations | UI/runtime observations · Network · Console where relevant · retest records | Sanitized commercial QA project; source cycle was still in progress |
 
 **Start here:** [QA scope](docs/qa-scope.md) · [E2E scenarios](docs/e2e-scenarios.md) · [responsive / cross-browser](docs/responsive-cross-browser.md) · [sanitization rules](SANITIZATION.md)
 
