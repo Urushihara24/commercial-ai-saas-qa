@@ -92,3 +92,11 @@ This repository contains no client or product name, production domain, customer 
 The repository is a sanitized public-facing snapshot of the QA work, not an export of the client's internal tracker. See [SANITIZATION.md](SANITIZATION.md) for publication rules and the confidentiality review checklist.
 
 No open-source license is granted for reuse of the commercial QA documentation in this repository.
+
+---
+
+## More engineering work
+
+- **[Auto-Pricing Bot](https://github.com/Urushihara24/monitoring-bot)** — Python marketplace automation with seller APIs, Telegram operations, Docker, tests, and fail-safe pricing controls.
+- **[DummyJSON API Regression Suite](https://github.com/Urushihara24/DummyJSON_Test)** — pytest/requests API automation with auth, cart CRUD, negative coverage, CI, and dependency audit.
+- **[GitHub profile](https://github.com/Urushihara24)** — selected commercial QA cases and Python engineering projects.
